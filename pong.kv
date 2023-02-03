@@ -1,11 +1,12 @@
 #:kivy 1.0.9
 
 <PongBall>:
-    size: 50, 50 
+    size: 70, 70 
     canvas:
         Ellipse:
+            source: 'ball.png'
             pos: self.pos
-            size: self.size          
+            size: self.size  
 
 <PongPaddle>:
     size: 15, 150
@@ -20,6 +21,12 @@
     player2: player_right
     
     canvas:
+
+        Rectangle:
+            source: 'bckgrnd.jpg'
+            pos: self.center_x - self.width / 2, self.center_y - self.height / 2
+            size: self.width, self.height
+
         Rectangle:
             pos: self.center_x - 5, 0
             size: 10, self.height
@@ -49,4 +56,3 @@
         id: player_right
         x: root.width - self.width
         center_y: root.center_y
-        
